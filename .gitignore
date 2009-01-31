@@ -1,0 +1,9 @@
+*.log
+*.sqlite3
+*.pid
+tmp/**/*
+db/schema.rb
+db/schema.sql
+config/database.yml
+config/luna.yml
+.DS_Store

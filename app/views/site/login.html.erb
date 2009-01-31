@@ -1,0 +1,12 @@
+<p>You must supply the password to your blog in order to access
+  the admin area. The password can be found in the configuration
+  file, luna.yml. You should have changed it when you set up the blog!</p>
+
+<% form_tag login_url do -%>
+
+<label for="password"><strong>Your Password</strong></label><br />
+<%= password_field_tag 'password' %>
+
+<input type="submit" value="Login">
+
+<% end -%>

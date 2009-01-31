@@ -1,0 +1,14 @@
+development:
+  title: My Blog
+  require_authentication: false
+  rss_url: http://localhost:3000/rss.xml
+  
+test:
+  title: My Blog
+  require_authentication: false
+  
+production:
+  title: My Blog
+  require_authentication: true
+  password: secret_password
+  rss_url: http://example.com/rss.xml

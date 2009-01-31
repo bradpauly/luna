@@ -1,0 +1,24 @@
+<h2>
+  Your Posts
+  <span class="normal"><%= link_to 'New post', new_post_path %></span>
+</h2>
+
+<table width="100%">
+  <tr>
+    <th>Title</th>
+    <th>Published</th>
+    <th>Last Updated</th>
+    <th colspan="2">
+  </tr>
+
+<% for post in @posts %>
+  <tr>
+    <td><%=h post.title %></td>
+    <td><%= post.published_at.strftime('%b %d, %Y %H:%m') %></td>
+    <td><%= post.updated_at.strftime('%b %d, %Y %H:%m') %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+

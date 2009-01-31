@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <% if LUNA['rss_url'] %>
+    <link rel="alternate" type="application/rss+xml" title="<%= LUNA['title'] -%>" href="<%= LUNA['rss_url'] -%>" />
+  <% end %>
+  <title><%= LUNA['title'] -%>
+    <% if @post && !@post.title.blank? -%>
+      | <%= @post.title %>
+    <% end -%>
+  </title>
+  <%= javascript_include_tag 'prototype' %>
+  <%= stylesheet_link_tag 'application' %>
+</head>
+<body>
+
+<div id="container">
+
+  <div class="header">
+    <% if admin? -%>
+    <span style="float:right;" class="normal">
+      <%= link_to 'New Post', new_post_path %> &nbsp;
+      <%= link_to 'Admin', '/posts/' -%> &nbsp;
+      <%= link_to 'Logout', '/logout/' -%>
+    </span>
+    <% end -%>
+    <%= link_to LUNA['title'], '/' -%>
+  </div>
+
+  <% if flash[:notice]%>
+  <p style="color: green"><%= flash[:notice] %></p>
+  <% end -%>
+
+  <%= yield  %>
+
+</div>
+<div id="footer">
+  <%= link_to 'Luna', 'http://bradpauly.com/projects/luna' -%>, a 
+  <%= link_to 'Ruby on Rails', 'http://www.rubyonrails.org/' -%>
+  blogging engine | 
+  <% if admin? -%>
+  <%= link_to 'Logout', '/logout/' -%>  
+  <% else %>
+  <%= link_to 'Admin', '/posts/' -%>
+  <% end -%>
+</div>
+
+<% if RAILS_ENV == 'production' -%>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-414395-1";
+urchinTracker();
+</script>
+<% end -%>
+
+</body>
+</html>

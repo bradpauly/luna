@@ -1,0 +1,18 @@
+<h2 class="post_title"><%= @post.title %></h2> 
+<div class="post_meta"><%= @post.created_at.strftime( '%B %d, %Y' ) -%></div>
+<div class="post_body"><%= rc( @post.body )-%></div
+
+<div id="comments">
+  <h4>Comments
+    <%= link_to 'Add a Comment', '#', :onclick => "$('comment_form').toggle();return false;" -%>
+  </h4>
+  <div id="comment_form" style="display:none;">
+    <%= render :partial => 'comments/form', :locals => { :comment => @comment } -%>
+  </div>
+  
+  <% if @post.comments.any? -%>
+    <% @post.comments.each do | comment | -%>
+      <%= render :partial => 'posts/comment', :locals => { :comment => comment } -%>
+    <% end -%>
+  <% end -%>
+</div>

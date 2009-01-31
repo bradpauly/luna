@@ -1,0 +1,15 @@
+<% @posts.each do | post | -%>
+  <div class="post">
+    <h2 class="post_title">
+      <%= link_to post.title, post_url( post ) -%>
+    </h2>
+    <div class="post_meta">
+      <%= post.created_at.strftime( '%B %d, %Y' ) -%> - 
+      <%= link_to pluralize( post.comments.count, 'Comment' ), post_url( post )+'#comments' -%>
+    </div>
+    <div class="post_intro">
+      <% link = link_to 'view full post &rarr;', post_url( post ) -%>
+      <%= rc( post.first_paragraph + ' &nbsp;' + link ) -%>
+    </div>
+  </div>
+<% end -%>

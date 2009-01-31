@@ -1,0 +1,13 @@
+<h1>Editing post</h1>
+
+<%= error_messages_for :post %>
+
+<% form_for(@post) do |f| %>
+  
+  <%= render :partial => 'posts/form', :locals => { :f => f } -%>
+  
+  <p><%= f.submit "Save Changes" %> or 
+  <%= link_to 'Cancel', posts_path %></p>
+<% end %>
+
+

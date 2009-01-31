@@ -1,0 +1,35 @@
+
+<%= error_messages_for :comment -%>
+<% remote_form_for( @comment ) do | f | -%>
+  <%= f.hidden_field :post_id -%>
+  
+  <p>
+    <b>Name</b> <span class="required">*</span><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Email</b> <span class="required">*</span><br />
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <b>Website</b><br />
+    <%= f.text_field :website %>
+  </p>
+
+  <p>
+    <b>Comment</b> <span class="required">*</span><br />
+    <%= f.text_area :body, :rows => 6, :cols => 60 %>
+  </p>
+  
+  <p>
+    <%= f.submit " Post Comment " %> &nbsp; 
+    <%= link_to 'Cancel', '#', :onclick => "$('comment_form').toggle();return false;" %> &nbsp; &nbsp; 
+    <span class="required">* Required</span>
+  </p>
+  
+  <div style="display:none;">
+    <%= f.text_field :occupation -%>
+  </div>
+<% end -%>
