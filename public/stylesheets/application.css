@@ -1,31 +1,32 @@
-body { background-color: #ccc; color: #333; }
-
-body, p, ol, ul, td {
+body {
   font-family: 'gill sans', helvetica, verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
-  margin-top:10px;
+  font-size:87%;
+  background-color: #ccc;
+  color: #333;
 }
 .normal {
   font-size: 13px;
   line-height: 18px;
 }
-
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
-
+p {
+  margin:1.0em 0;
+}
 a {
   color: #EB7906;
   text-decoration:none;
+}
+h4 {
+  margin:0;
 }
 h4 a {
   color: #999;
   font-weight: normal;
 }
-
 .header {
   font-size: 20px;
   margin-bottom: 20px;  
@@ -35,24 +36,19 @@ h4 a {
   color: #EB7906;
 }
 h2.post_title {
-/*  font-family: times;*/
   margin-top:2px;
   margin-bottom:2px;
 }
 .post_meta {
   color: #999;
-  margin-bottom:0.5em;
 }
-.post_intro {
-  font-family: "lucida grande", verdana, arial;
-}
-.post_body {
-  font-family: "lucida grande", verdana, arial;
+.post_intro, .post_body {
+  line-height:158%;
+  font-family:'Lucida Grande','Lucida Sans Unicode',Tahoma,sans-serif;
 }
 .post {
   margin-bottom: 20px;
 }
-
 .comment {
   padding:10px;
   background-color: #eee;
@@ -65,10 +61,10 @@ h2.post_title {
   font-family: "lucida grande", verdana, arial;
   padding: 10px 0;
 }
-
 .required {
   color: #999;
 }
+
 #container {
   background: #fff;
   width: 700px;
@@ -80,7 +76,6 @@ h2.post_title {
   width: 700px;
   margin: 0 auto;
   padding:1px 20px;
-/*  border: 1px solid blue;*/
   font-size:0.92em;
   text-align: right;
 }

@@ -7,9 +7,11 @@
       <%= post.created_at.strftime( '%B %d, %Y' ) -%> - 
       <%= link_to pluralize( post.comments.count, 'Comment' ), post_url( post )+'#comments' -%>
     </div>
+    <% unless is_iphone? %>
     <div class="post_intro">
       <% link = link_to 'view full post &rarr;', post_url( post ) -%>
       <%= rc( post.first_paragraph + ' &nbsp;' + link ) -%>
     </div>
+    <% end %>
   </div>
 <% end -%>

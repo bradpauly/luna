@@ -1,6 +1,7 @@
 *.log
 *.sqlite3
 *.pid
+upload.sh
 tmp/**/*
 db/schema.rb
 db/schema.sql

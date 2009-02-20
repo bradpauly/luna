@@ -15,8 +15,6 @@ h4 a {
   color: #999;
   font-weight: normal;
 }
-
-
 .header {
   font-size: 20px;
   margin-bottom: 20px;  
@@ -34,7 +32,7 @@ h2.post_title {
   color: #999;
   margin-bottom:0.5em;
 }
-.post_intro {
+.post_intro, .post_body {
   font-family: "lucida grande", verdana, arial;
 }
 .post_body {
@@ -44,7 +42,6 @@ h2.post_title {
 .post {
   margin-bottom: 20px;
 }
-
 .comment {
   padding:10px;
   background-color: #eee;

@@ -38,7 +38,7 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_luna_session',
-    :secret      => 'cookie_secret'
+    :secret      => '8d8137505b4a761fdd58b6379a7a8948'
   }
 
   # Use the database for sessions instead of the cookie-based default,

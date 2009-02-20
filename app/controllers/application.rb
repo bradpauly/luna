@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => 'a2d3127ff22f5640567eef6f45059e42'
   
-  helper_method :admin?
+  helper_method :admin?, :is_iphone?
   
   protected
   
@@ -40,6 +40,10 @@ class ApplicationController < ActionController::Base
   
   def determine_layout
     ( iphone_user_agent? || iphone_request? ) ? 'iphone' : 'application'
+  end
+  
+  def is_iphone?
+    ( iphone_user_agent? || iphone_request? )
   end
   
   def iphone_request?
