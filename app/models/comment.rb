@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
   
   belongs_to :post
+  after_create { |comment| NotificationMailer.deliver_comment(comment) }
   
   # This if for comment spam. Must be blank.
   attr_accessor :occupation

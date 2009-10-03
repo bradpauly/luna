@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
   protected
   
   def admin?
-    LUNA['require_authentication'] && session[:admin]
+    if LUNA['require_authentication']
+      session[:admin]
+    else
+      true
+    end
   end
 
   def authenticate( password )

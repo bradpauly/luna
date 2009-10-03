@@ -8,7 +8,7 @@
     </span>
     <% end %>
     
-    <strong><%= comment.name -%></strong> -
+    <strong><%= name_and_website(comment) -%></strong> -
     <%= comment.created_at.strftime( '%B %d, %Y' ) -%>
   </div>
   <div class="comment_body"><%= nl2br h( comment.body ) -%></div>
