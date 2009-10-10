@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
   
   layout :determine_layout
-  # before_filter :authenticate, :except => [ :show ]
   before_filter :require_login, :except => [ :show ]
 
   def index
-    @posts = Post.find(:all)
+    @posts = Post.find(:all, :order => 'created_at DESC')
     respond_to do |format|
       format.html
       format.xml  { render :xml => @posts }
